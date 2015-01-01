@@ -31,9 +31,9 @@
                     {% endfor %}
                 {% endif %}
 
-            {% assign src = ("https://d2zwcujesf1bgv.cloudfront.net/prod/v12/images/tiny_preload_size/forever_" + padded + ".jpg") %}
+            {% capture src %} {{'https://d2zwcujesf1bgv.cloudfront.net/prod/v12/images/tiny_preload_size/forever_'}} {{ padded }} {{'.jpg'}} {% endcapture %}
 
-                <td><img src="{{ src }}" /></td>
+                <td><img src="{{ src }}" />src</td>
 
             {% endfor %}
         </tr>
