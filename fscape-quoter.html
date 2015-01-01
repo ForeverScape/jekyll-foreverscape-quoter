@@ -1,0 +1,44 @@
+
+<div>
+
+
+    {% assign page = start | times: 5 %}
+
+    {{ start }}
+
+    <table>
+
+    <!-- i can't believe jekyll does not support modulus out of the box -->
+
+        <!-- ugly if/length for padding until I figure out how to do string formatting in liquid. i hate liquid now -->
+        <!-- i'm on an airplane right now, so doing it the repetitive ugly way until somebody answers my stack overflow question -->
+
+
+        {% for i in (start..end) %}
+        <tr>
+            {% for q in (0..4) %}
+
+            {% capture page %}{{ page | plus: '1' }}{% endcapture %}
+
+            {% assign strLength = page | size %}
+            {% assign pad = 4 %}
+
+            {% assign padLength = pad | minus: strLength %}
+                {% if padLength > 0 %}
+                    {% assign padded = page %}
+                    {% for position in (1..padLength) %}
+                        {% assign padded = padded | prepend: '0' %}
+                    {% endfor %}
+                {% endif %}
+
+            {% assign src = ("https://d2zwcujesf1bgv.cloudfront.net/prod/v12/images/tiny_preload_size/forever_" + padded + ".jpg") %}
+
+                <td><img src="{{ src }}" /></td>
+
+            {% endfor %}
+        </tr>
+    {% endfor %}
+
+    </table>
+
+</div>
