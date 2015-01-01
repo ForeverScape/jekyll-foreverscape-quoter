@@ -1,6 +1,9 @@
 
 <div>
 
+<!-- you can do modulus! I will have to re-write this again -->
+    <!-- {{ 12 | modulo: 5 }} -->
+
 
     {% assign page = start | times: 5 %}
 
@@ -8,10 +11,6 @@
 
     <table>
 
-    <!-- i can't believe jekyll does not support modulus out of the box -->
-
-        <!-- ugly if/length for padding until I figure out how to do string formatting in liquid. i hate liquid now -->
-        <!-- i'm on an airplane right now, so doing it the repetitive ugly way until somebody answers my stack overflow question -->
 
 
         {% for i in (start..end) %}
@@ -31,9 +30,9 @@
                     {% endfor %}
                 {% endif %}
 
-            {% capture src %} {{'https://d2zwcujesf1bgv.cloudfront.net/prod/v12/images/tiny_preload_size/forever_'}} {{ padded }} {{'.jpg'}} {% endcapture %}
+            {% capture src %}{{'https://d2zwcujesf1bgv.cloudfront.net/prod/v12/images/tiny_preload_size/forever_'}}{{ padded }}{{'.jpg'}}{% endcapture %}
 
-                <td><img src="{{ src }}" />src</td>
+                <td><img src="{{ src }}" style="width:{{width}}px;" /></td>
 
             {% endfor %}
         </tr>
