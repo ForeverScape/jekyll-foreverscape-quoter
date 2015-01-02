@@ -4,18 +4,20 @@
 <!-- you can do modulus! I will have to re-write this again -->
     <!-- {{ 12 | modulo: 5 }} -->
 
+    {% assign pageWidth = width | divided_by: '5' %}
 
-    {% assign page = start | times: 5 %}
-
-    {{ start }}
+    {% assign page = start | minus: 1 %}
+    {% assign col = 0 %}
 
     <table>
 
-
+        <tr>
 
         {% for i in (start..end) %}
-        <tr>
-            {% for q in (0..4) %}
+
+        {% assign col = col | plus: 1 %}
+        {% assign mod = i | modulo: 5 %}
+
 
             {% capture page %}{{ page | plus: '1' }}{% endcapture %}
 
@@ -30,14 +32,34 @@
                     {% endfor %}
                 {% endif %}
 
+            {% assign pagePlusTen = page | plus: '10' %}
+
             {% capture src %}{{'https://d2zwcujesf1bgv.cloudfront.net/prod/v12/images/tiny_preload_size/forever_'}}{{ padded }}{{'.jpg'}}{% endcapture %}
 
-                <td><img src="{{ src }}" style="width:{{width}}px;" /></td>
+            {% if i > 0 %}
+                <td>
+                    <a href="http://www.foreverscape.com/detail/?start={{page}}&end={{pagePlusTen}}" >
+                        <img alt="Page {{page}} of the ForeverScape" src="{{ src }}" style="width:{{pageWidth}}px;" />
+                    </a>
 
-            {% endfor %}
-        </tr>
+                </td>
+            {% endif %}
+
+            {% if mod == 0 %}
+
+                </tr><tr>
+            {% endif %}
+
+
+
     {% endfor %}
 
+        </tr>
+
     </table>
+
+    Pages {{start}} to {{end}} of the <a href="http://www.foreverscape.com">ForeverScape project</a>. <hr/><br/>
+
+
 
 </div>
