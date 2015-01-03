@@ -9,7 +9,7 @@ Copy the html file to your include folder. DO NOT use the .rb file, that is unde
 
 <h2>Usage:</h2>
 
-Use this where you want the image grid to appear
+Use this where you want the image grid to appear. Start is simply the starting page number, end is the last page inclusive. Please refer to <a href="http://www.foreverscape.com">foreverscape.com</a> by hovering the cursor over the desired image. The page number will be revealed.
 
     {% assign start = 171 %}
     {% assign end = 195 %}
