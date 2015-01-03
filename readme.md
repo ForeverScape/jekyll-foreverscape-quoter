@@ -2,6 +2,11 @@
 
 This is a Jekyll partial designed to allow you to quickly display an arbitrary range of the ForeverScape images into a single image on your blog. Useful for quickly writing about the ForeverScape or just showing off the grid. Just give it a start page, end page and width in pixels it should render a grid.
 
+<h2>Live Demo:</h2>
+
+View the post, <a href="http://www.foreverscape.com/art/2014/12/27/story-of-the-frogs/">Space Frogs</a>, to see the quoter in action!
+
+
 <h2>Installation:</h2>
 
 Copy the html file to your include folder. DO NOT use the .rb file, that is under development to make a more advanced version as a Jekyll plugin. 
