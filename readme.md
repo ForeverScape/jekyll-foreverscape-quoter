@@ -19,7 +19,7 @@ Use this where you want the image grid to appear
     
 For now, you have to be sure to start on a nunber ending in a one or a six, e.g. 201 or 526 as this is the first canonical column. There will be an update to allow any arbitrary page soon.
 
-License:
+<h2>License:</h2>
 
 Put this wherever you want, but for now, please leave the linkback to ForeverScape. This restriction might be removed in the future. ALso, please see content restrictions below.
 
